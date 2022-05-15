@@ -12,7 +12,7 @@ Holt Winter Algorithm Nifty 50 Forecasting Chart-
 
 https://divyankm.github.io/Stock-Exchange-Data-Analysis/Nifty50%20Last%201%20Year%20Chart%20with%20Actual%20and%20Forecasted%20Data(HW).html
 
-Holt Winter Algorithm Nifty 50 Forecasting Chart-
+Holt Winter Algorithm Nifty 50 Training, Testing and Forecasting Chart-
 
 https://divyankm.github.io/Stock-Exchange-Data-Analysis/Nifty%2050%20HW%20Forecasting%20Chart.html
 
