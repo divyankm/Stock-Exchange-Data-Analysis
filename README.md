@@ -20,3 +20,11 @@ https://divyankm.github.io/Stock-Exchange-Data-Analysis/Nifty%2050%20HW%20Foreca
 Diabetes Prediction using dashboardexplainer-
 
 https://divyankm.github.io/Stock-Exchange-Data-Analysis/dashboard.html  
+
+KATS Forecasting ALGO with LSTM for NIFTY 50 INDEX
+
+https://divyankm.github.io/Stock-Exchange-Data-Analysis/Nifty50%20Last%201%20Year%20Chart%20with%20Actual%20and%20Forecasted%20Data%20using%20KATS%20Algo.html
+
+KATS Forecasting ALGO with LSTM for USD/INR Currency PAIR
+
+https://divyankm.github.io/Stock-Exchange-Data-Analysis/USD_INR%20Last%201%20Year%20Chart%20with%20Actual%20and%20Forecasted%20Data%20using%20KATS%20Algo.html
