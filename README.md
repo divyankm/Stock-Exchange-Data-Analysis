@@ -16,7 +16,6 @@ Holt Winter Algorithm Nifty 50 Training, Testing and Forecasting Chart-
 
 https://divyankm.github.io/Stock-Exchange-Data-Analysis/Nifty%2050%20HW%20Forecasting%20Chart.html
 
-
 Diabetes Prediction using dashboardexplainer-
 
 https://divyankm.github.io/Stock-Exchange-Data-Analysis/dashboard.html  
