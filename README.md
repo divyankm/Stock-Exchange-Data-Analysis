@@ -1,8 +1,8 @@
 # deploy-plotly-html    
 
-Last 1 Year NIFTY 50 Chart-
+Last 1 Year NIFTY 50 Mean Reversion Pct Returns(Thursday)-
 
-https://divyankm.github.io/Stock-Exchange-Data-Analysis/nf.html
+https://divyankm.github.io/Stock-Exchange-Data-Analysis/NF%20Mean%20Reversion%20Returns%20on%20Expiry%20Day(Thursday).html
 
 Holt Winter and AUTOTS Algorithm Nifty 50 Forecasting Chart-
 
