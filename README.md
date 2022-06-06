@@ -1,4 +1,4 @@
-# deploy-plotly-html    
+##Static Webpage- https://divyankm.github.io/Stock-Exchange-Data-Analysis/  
 
 Last 1 Year NIFTY 50 Mean Reversion Pct Returns(Thursday)-
 
