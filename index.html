@@ -36,17 +36,22 @@
   </header>    
  
   <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    <p>Welcome to my Static Webpage.😄 Below are some VIZ's created based on Nifty 50 of Last 1 year data</p>
+    <p>Welcome to my Static Webpage.Below are some VIZ's created based on Historical and Backtested Data.</p>
       
       <p>👨‍💻 This is Basic version of webpage,more improvement will be coming overtime along with Automation 👨‍💻, Currently WIP</p>
       
       <p>Coding Language- Python</p>
-      <p>Current Libraries- Investpy,Plotly,KATS,stats model,AUTO TS,Pandas,Google Colab Notebooks</p>
-      <p>Topics Covered- Data Science,Statistics,Maching Learning,API's & Web Development,Automation</p>
+      <p>Current Libraries- Investpy | Plotly | KATS | stats model | AUTOTS | Pandas | Google Colab | Beautifulsoup</p>
+      <p>Topics Covered- Data Science | Statistics | Maching Learning | API's & Web Development | Automation | Web Scrapping</p>
+      <p>Database- mySQL | OpenSearch</p>
+      <p>Vizualization and Alerting Tool- OpenSearch Dashboards | Grafana</p>
+      <p>Orchestration Tool-Docker Container(Docker Compose)</p>
+      <p>Data Pipelines-Python Scripts Extracting data using API's,transforming and loading data to database.</p>
+      <p>Current OS-Windows 10 Pro. (Fut Scope-Dev env Migration to AWS(Linux))</p>
+      <p>CICD- Not on cards till dev env working in local machine(Windows OS)</p>
 
   </article>
-    
-    
+
 <!--     <include src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/NF%20Mean%20Reversion%20Returns%20on%20Expiry%20Day(Thursday).html"></include> -->
 <body>
 <!-- <h1>Nifty 50 Index Data Analysis and Forecasting Algorithm Test-</h1>
@@ -75,7 +80,7 @@
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/BNF_Daily_Returns_in_pct.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
 
-    <h2>Nifty50 and BNF (Bank NIFTY) Probability Distribution based on Percentage Returns on Daily Basis</h2>
+    <h3>Nifty50 and BNF (Bank NIFTY) Probability Distribution based on Percentage Returns on Daily Basis</h3>
     <p> Post Automation Probablity Distribution can be calculated using single click of any Stock or Index.
       It gives fair idea about Probability Percent of Stock/Index moving between percent range.
       NIFTY has Probablity of 40% which can close at 0% returns on daily basis, based on last 1 Year Data, Probablity will vary based on different time interval.
@@ -85,27 +90,64 @@
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/BNF_Probablity_Distrubution_of_Daily_Returns.html" id="app" width="50%" height="500" frameborder="0" scrolling="no" align="right"></iframe>
 
-<h2>Pair Trading based on BNF/NF Ratio</h2>
+<h2>Pair Trading based on BNF/NF Ratio-</h2>
 
+    <p>A pairs trade or pair trading is a market neutral trading strategy enabling people to profit from virtually any 
+       market conditions: uptrend, downtrend, or sideways movement. 
+       This strategy is categorized as a statistical arbitrage and convergence trading strategy.</p>
+
+    <p>Cointegration factor:0.14, Correlation factor:0.88 for BNF/NF Pair for last 1 backtested data.</p>
+    <p>The correlations between financial quantities are notoriously unstable. Nevertheless, correlations are regularly used in 
+      almost all multivariate financial problems. An alternative statistical measure to correlation is cointegration. 
+      This is probably a more robust measure of linkage between two financial quantities, but as yet there is little derivative theory 
+      based on this concept.
+
+      <p></p>Two stocks may be perfectly correlated over short timescales, yet diverge in the long run, with one growing and the other decaying. 
+      Conversely, two stocks may follow each other, never being more than a certain distance apart, but with any correlation, 
+      positive negative or varying. If we are delta hedging, then maybe the short timescale correlation matters.</p>
+    <p>Ref link-</p>
+    <a target="blank" href="https://zerodha.com/varsity/chapter/pair-trading-basics/">Visit zerodha.com/varsity/chapter/pair-trading-basics/</a>
+
+    <p>Pair Trading Signals generated on backtested Data-</p>
+
+    <p>Pair Trading Signals generated based on Pair Ratio breaching 2 Standard Deviation-</p>
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/BNF_NF_ratio_for_pair_trading.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
 
-    <h3>NF and BNF Last 1 year returns in Percentage-</h3>
+    <p>Pair Trading Signals generated based on Pair Ratio breaching below 1.5 and above 1.5 Z-Score Value-</p>
+    <iframe src="PAIR_TRADING_signal_based_on_z_score.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
     
-    <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/NF_and_BNF_Percent_Returns_from_last_1_year.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
+    <p><b>Note- In above Example only single pair trade is demonstrated which BNF and NF pair</b></p>
+    <p><b>100's of pairs can be created based on correlation and co-integration factors after scanning 100+ scripts on daily basis 
+      and pushing alerts during business hours for execution.</b></p>
+<!-- <h3>NF and BNF Last 1 year returns in Percentage-</h3>
+    
+    <iframe src=https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/NF_and_BNF_Percent_Returns_from_last_1_year.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe> --> 
 
 <h2>MAX PAIN Range for Weekly Expiry NF</h2>
-
-    <p> Post Automation MAX PAIN Range can be calculated for any F&O Script.
-      MAX PAIN is useful in determine the range for particular Expriy in which it's going to expired based on OpenInterest(OI) 
-      Calculations at each strike and MAX LOSSES occuring at each strikePrice, calculated below for NF weekly expiry.
+    
+    <p>
+    Max pain, or the max pain price, is the strike price with the most open contract puts and calls and the price at which the stock 
+    would cause financial losses for the largest number of option holders at expiration.
+    The Maximum Pain theory states that an option's price will gravitate towards a max pain price, in some cases equal to the 
+    strike price for an option, that causes the maximum number of options to expire worthless.
+    Max pain calculation involves the summation of the rupee values of outstanding put and call options for each in-the-money strike price.
     </p>
+    
+    <p>MAX PAIN is useful in determine the range for particular Expriy in which it's going to expired based on OpenInterest(OI) 
+      Calculations at each strike and MAX LOSSES occuring at each strikePrice, calculated below for NF weekly expiry.</p>
+
+    <p><b> Post Automation MAX PAIN Range can be calculated for any F&O Script.</b></p>
     <p>Ref link-</p>
-    <a href="https://zerodha.com/varsity/chapter/max-pain-pcr-ratio/">Visit zerodha/varsity/chapter/max-pain-pcr-ratio</a>
+    <a target="blank" href="https://zerodha.com/varsity/chapter/max-pain-pcr-ratio/">Visit zerodha/varsity/chapter/max-pain-pcr-ratio</a>
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/MAX_PAIN_Calculation_for_Weekly_Expiry_on_9-Jun-2022.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
 
-<h2>Calender Spreads</h2>
+<h2>Calender Spreads- <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 2px 2px; color:white;display: inline-block" href="https://divyankm.github.io/Stock-Exchange-Data-Analysis/cal_spread.html" title="">Calender Spread</a></button></h2>
 
+    <p><b>Backtesting Results along with Real time Dashboard Snapshot is attached in above button link.</b></p>
+    <p><b>Calender Spread Strategy went live with Alerting and Vizualizations.
+      Currently 10 F&O Scripts are being tested in real markets based on liquidity.</b></p>
+    
     <p>A calendar spread is an options or futures strategy established by simultaneously 
       entering a long and short position on the same underlying asset but with different delivery dates.
       Continuous NF FUT Range spread of Current(Jun) and Next (Jul) Month spread range show in below vizualization and condition's 
@@ -117,12 +159,9 @@
 
     <p>Algorithm will scan all F&O intruments listed in NSE in realtime and generate alerts.Currently 150+ F&O intruments listed on NSE</p>
     
-    <p>Fut Scope- Algorithm will take trade based on 1 year backtested results without any human intervention.</p>
-
+    <p><b>Future Scope</b>- Algorithm will take trade based on 1 year backtested results without any human intervention.</p>
     <p>Ref link-</p>
-    <a href="https://zerodha.com/varsity/chapter/calendar-spreads/">Visit zerodha/varsity/chapter/calendar-spreads/</a>
-
-    <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/NIFTY_FUT_Calender_Spread.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
+    <a target="blank" href="https://zerodha.com/varsity/chapter/calendar-spreads/">Visit zerodha/varsity/chapter/calendar-spreads/</a>
 
 <h2>INDIA VIX Index</h2>
 
@@ -131,14 +170,12 @@
        is calculated which indicates the expected market volatility over the next 30 calendar days.</p> 
 
     <p>Ref link-</p>
-    <a href="https://www1.nseindia.com/content/indices/white_paper_IndiaVIX.pdf">Visit nseindia.com/content/indices/white_paper_IndiaVIX.pdf</a>
+    <a target="blank" href="https://www1.nseindia.com/content/indices/white_paper_IndiaVIX.pdf">Visit nseindia.com/content/indices/white_paper_IndiaVIX.pdf</a>
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/INDIA_VIX_Volatality.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
 
+
 <h2>Holt Winter and AUTOTS Algorithm Nifty 50 Forecasting Chart-</h2>
-    <p>HW and AUTO Algo are backtested on last 1 Year Nifty 50 data, Results are not upto mark, more R&D going on with Forecasting Machine Learning(AI,ML) side.
-       Though Financial Markets are Trending but without seasonality, so forecasting correct with Seasonality Forcasting ALGO is next to impossible from current results.
-       Trying Alternate Algo based on Deep Learning Mechanism and evaulating model performance 🤞 </p>
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/Nifty50%20Actual,HW%20Forecasted%20and%20AutoTS%20Forecasted%20Chart.html" id="app"  width="100%" height="388" frameborder="0" scrolling="no" align="right"></iframe>
 
@@ -155,16 +192,28 @@
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/Nifty50%20Last%201%20Year%20Chart%20with%20Actual%20and%20Forecasted%20Data%20using%20KATS%20Algo.html" id="app"  width="100%" height="388" frameborder="0" scrolling="no"></iframe>
 
 <h2>KATS Forecasting ALGO with LSTM for USD/INR Currency Pair</h2>
-    <p> As Per KATS Model USD/INR value will be crossing 80 rupees in upcoming months due to geo-political tensions and rising inflation and intrest rates along the globe
-    Thought the forecasted results are quite unusual, may be KATS Algo is not not in showing exacting future values but able to forecast upcoming Trend, 
-    may be it can be wrong,depending on future developments but getting some insights based on data crunching and data analysis working in the Algo.
-    Ref link-https://www.livemint.com/news/india/rupee-may-slide-to-80-per-us-dollar-by-june-end-say-analysts-11587549796188.html </p>
+    <p> As Per KATS Model USD/INR value will be crossing 80 rupees in upcoming months due to <b>geo-political</b>b>tensions and *rising inflation* 
+      and <b>intrest rates</b> along the <b>global recession</b> fear.
+    Though the forecasted results are quite unusual, may be KATS Algo is not exact future values but able to forecast upcoming trend.
+    </p>
+
+    <p>Ref link-</p>
+    <a href="https://www.livemint.com/news/india/rupee-may-slide-to-80-per-us-dollar-by-june-end-say-analysts-11587549796188.html">
+      Visit www.livemint.com/news/india/rupee-may-slide-to-80-per-us-dollar-by-june-end</a>
     
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/USD_INR%20Last%201%20Year%20Chart%20with%20Actual%20and%20Forecasted%20Data%20using%20KATS%20Algo.html" id="app"  width="100%" height="388" frameborder="0" scrolling="no"></iframe>
 
+    <p>Updates as per <b>25-Jun-2022</b></p>
+
+    <p>- Calender Spread Strategy went live with Alerting and Vizualizations.
+         Currently 10 F&O Scripts are being tested in real markets based on liquidity.</p>
+
+      <p>- ML Algo work on hold.</p>
+      <p>- Mean Reversion(Delta Neutral Strategy) R&D, ETL pipeline work completed, Automation based on Real time testing in markets is on hold due to low liquidity because of recent market turmoil.</p>
+      <p>- Pair Trading automation is in WIP for BNF/NF Pair along with Max Pain Strategy.</p> 
+
 <p>As this project is under WIP and timeline of completion cannot be provided (it's depending on Backtesting results on Real Time Data,along with validation of Results in real market)
    Feel free to connect with me regarding any queries, contributions are always welcome!!! 😃</p>
-    
-    
+        
 </body>
 </html>
