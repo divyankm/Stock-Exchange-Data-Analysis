@@ -55,24 +55,15 @@
 <!--     <include src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/NF%20Mean%20Reversion%20Returns%20on%20Expiry%20Day(Thursday).html"></include> -->
 <body>
 <!-- <h1>Nifty 50 Index Data Analysis and Forecasting Algorithm Test-</h1>
-    <p>In the below viz's,Data Analysis is done on Nifty 50 Index.</p>
+    <p>In the below viz's,Data Analysis is done on Nifty 50 Index.</p> -->
     
-<h2>Last 1 Year NIFTY 50 Mean Reversion Pct Returns(Thursday)</h2> 
-
-    <p>Mean Reversion Method is quiet significant in Financial Terms.Mean reversion is a financial term for the assumption that an asset's price will tend to converge to the average price over time. 
-        Using mean reversion as a timing strategy involves both the identification of the trading range for a security and the computation of the average price using quantitative methods.</p>
-    
-    <p>Calculating the Mean Reversion Returns from Consecutive Thrusday (Weekly Expiry).
-        Every Thursday Initiating Delta Neutral Strategy, so Mean Reversion Returns gives insight regarding the volatality in Markets.
-        Thumb Rule- Lower the Mean Reversion Returns, Higher the changes of NIFTY 50 being in Range,resulting in low volatality and High Probablity of making Profit.🤑</p> -->
-
 <h2>NIFTY 50 Chart (Last 1 Year)</h2>
 
-    <p> Basic Candlestick chart of NF50 along with Bollinger Band (2SD cofigured)</p>
+<p> Basic Candlestick chart of NF50 along with Bollinger Band (2SD cofigured)</p>
 
 <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/Nifty_50_Chart_last_1_Year.html" id="app" width="100%" height="600" frameborder="0" scrolling="no" ></iframe>
 
-<h2>Daily Percent Returns along with Moving Avg For NF and Exponential Moving Average for BNF During Backtesting</h2>
+<h2>Nifty and BNF Daily Percent Returns for Last 1 Year-</h2>
 
     <body style="background-color:white" ></body>
 
@@ -81,48 +72,61 @@
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/BNF_Daily_Returns_in_pct.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
 
     <h3>Nifty50 and BNF (Bank NIFTY) Probability Distribution based on Percentage Returns on Daily Basis</h3>
-    <p> Post Automation Probablity Distribution can be calculated using single click of any Stock or Index.
+    <xmp>
+      Post Automation Probablity Distribution can be calculated using single click of any Stock or Index.
       It gives fair idea about Probability Percent of Stock/Index moving between percent range.
-      NIFTY has Probablity of 40% which can close at 0% returns on daily basis, based on last 1 Year Data, Probablity will vary based on different time interval.
-    </p>
+    </xmp>
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/Nifty_50_Normalised_Distrubution_of_Daily_Returns.html" id="app" width="50%" height="500" frameborder="0" scrolling="no" align="left"></iframe>
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/BNF_Probablity_Distrubution_of_Daily_Returns.html" id="app" width="50%" height="500" frameborder="0" scrolling="no" align="right"></iframe>
 
+
+
+<h2>Mean Reversion Method and Option Strategies <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 2px 2px; color:white;display: inline-block" href="https://divyankm.github.io/Stock-Exchange-Data-Analysis/option_strategy.html" title="">Option Strategies</a></button></h2> 
+
+<xmp>
+    - Mean Reversion Method is quiet significant in Financial Terms.Mean reversion is a financial term for the assumption that an asset's price will tend 
+      to converge to the average price over time. 
+    - Using mean reversion as a timing strategy involves both the identification of the trading range for a security and the computation of the average 
+      price using quantitative methods.
+    
+    - Calculating the Mean Reversion Returns from Consecutive Thrusday (Weekly Expiry)-
+        Every Thursday Initiating Delta Neutral Strategy, so Mean Reversion Returns gives insight regarding the volatality in Markets.
+        Thumb Rule- Lower the Mean Reversion Returns, Higher the changes of NIFTY 50 being in Predicted Probable Range,resulting in low volatality and High 
+        Probablity of making Profit.
+</xmp>
+
 <h2>Pair Trading based on BNF/NF Ratio-</h2>
 
-    <p>A pairs trade or pair trading is a market neutral trading strategy enabling people to profit from virtually any 
-       market conditions: uptrend, downtrend, or sideways movement. 
-       This strategy is categorized as a statistical arbitrage and convergence trading strategy.</p>
+<xmp>
+    - A pairs trade or pair trading is a market neutral trading strategy enabling people to profit from virtually any market conditions: uptrend, downtrend, 
+      or sideways movement. This strategy is categorized as a statistical arbitrage and convergence trading strategy.
 
-    <p>Cointegration factor:0.14, Correlation factor:0.88 for BNF/NF Pair for last 1 backtested data.</p>
-    <p>The correlations between financial quantities are notoriously unstable. Nevertheless, correlations are regularly used in 
-      almost all multivariate financial problems. An alternative statistical measure to correlation is cointegration. 
-      This is probably a more robust measure of linkage between two financial quantities, but as yet there is little derivative theory 
-      based on this concept.
+    - Cointegration factor:0.14, Correlation factor:0.88 for BNF/NF Pair for last 1 backtested data.Both Factors will change on Daily Bais.
+    - The correlations between financial quantities are notoriously unstable. Nevertheless, correlations are regularly used in almost all multivariate 
+      financial problems. An alternative statistical measure to correlation is cointegration. 
+    - This is probably a more robust measure of linkage between two financial quantities, but as yet there is little derivative theory based on this concept.
 
-      <p></p>Two stocks may be perfectly correlated over short timescales, yet diverge in the long run, with one growing and the other decaying. 
-      Conversely, two stocks may follow each other, never being more than a certain distance apart, but with any correlation, 
-      positive negative or varying. If we are delta hedging, then maybe the short timescale correlation matters.</p>
-    <p>Ref link-</p>
-    <a target="blank" href="https://zerodha.com/varsity/chapter/pair-trading-basics/">Visit zerodha.com/varsity/chapter/pair-trading-basics/</a>
+    - Two stocks may be perfectly correlated over short timescales, yet diverge in the long run, with one growing and the other decaying. 
+    - Conversely, two stocks may follow each other, never being more than a certain distance apart, but with any correlation, positive negative or varying. 
+      If we are delta hedging, then short timescale correlation matters.
+</xmp>
+<xmp>
+    - Pair Trading Signals generated on backtested Data. Pair Trading Signals generated based on Pair Ratio breaching 2 Standard Deviation
+</xmp>
+    <p><b>Note- In this Example only single pair trade is demonstrated which BNF and NF pair</b></p>
+    <p><b>100's of pairs can be created based on correlation and co-integration factors after scanning 100+ scripts on daily basis and pushing alerts during 
+  business hours for execution.</b></p>
 
-    <p>Pair Trading Signals generated on backtested Data-</p>
+  <p>Ref link- <a target="blank" href="https://zerodha.com/varsity/chapter/pair-trading-basics/">Visit zerodha.com/varsity/chapter/pair-trading-basics/</a></p>
 
-    <p>Pair Trading Signals generated based on Pair Ratio breaching 2 Standard Deviation-</p>
+
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/BNF_NF_ratio_for_pair_trading.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
 
     <p>Pair Trading Signals generated based on Pair Ratio breaching below 1.5 and above 1.5 Z-Score Value-</p>
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/PAIR_TRADING_signal_based_on_z_score.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
     
-    <p><b>Note- In above Example only single pair trade is demonstrated which BNF and NF pair</b></p>
-    <p><b>100's of pairs can be created based on correlation and co-integration factors after scanning 100+ scripts on daily basis 
-      and pushing alerts during business hours for execution.</b></p>
-<!-- <h3>NF and BNF Last 1 year returns in Percentage-</h3>
-    
-    <iframe src=https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/NF_and_BNF_Percent_Returns_from_last_1_year.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe> --> 
-
 <h2>MAX PAIN Range for Weekly Expiry NF</h2>
     
     <p>
@@ -137,9 +141,8 @@
       Calculations at each strike and MAX LOSSES occuring at each strikePrice, calculated below for NF weekly expiry.</p>
 
     <p><b> Post Automation MAX PAIN Range can be calculated for any F&O Script.</b></p>
-    <p>Ref link-</p>
-    <a target="blank" href="https://zerodha.com/varsity/chapter/max-pain-pcr-ratio/">Visit zerodha/varsity/chapter/max-pain-pcr-ratio</a>
-
+    <p>Ref link-<a target="blank" href="https://zerodha.com/varsity/chapter/max-pain-pcr-ratio/">Visit zerodha/varsity/chapter/max-pain-pcr-ratio</a></p>
+   
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/MAX_PAIN_Calculation_for_Weekly_Expiry_on_9-Jun-2022.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
 
 <h2>Calender Spreads- <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 2px 2px; color:white;display: inline-block" href="https://divyankm.github.io/Stock-Exchange-Data-Analysis/cal_spread.html" title="">Calender Spread</a></button></h2>
@@ -160,18 +163,18 @@
     <p>Algorithm will scan all F&O intruments listed in NSE in realtime and generate alerts.Currently 150+ F&O intruments listed on NSE</p>
     
     <p><b>Future Scope</b>- Algorithm will take trade based on 1 year backtested results without any human intervention.</p>
-    <p>Ref link-</p>
-    <a target="blank" href="https://zerodha.com/varsity/chapter/calendar-spreads/">Visit zerodha/varsity/chapter/calendar-spreads/</a>
+    <p>Ref link-<a target="blank" href="https://zerodha.com/varsity/chapter/calendar-spreads/">Visit zerodha/varsity/chapter/calendar-spreads/</a></p>
+    
 
 <h2>INDIA VIX Index</h2>
 
-    <p>India VIX is a volatility index based on the NIFTY Index Option prices. 
-       From the best bid-ask prices of NIFTY Options contracts, a volatility figure (%) 
-       is calculated which indicates the expected market volatility over the next 30 calendar days.</p> 
+<xmp>
+    India VIX is a volatility index based on the NIFTY Index Option prices. From the best bid-ask prices of NIFTY Options contracts, a volatility figure (%) 
+    is calculated which indicates the expected market volatility over the next 30 calendar days.
+</xmp>
 
-    <p>Ref link-</p>
-    <a target="blank" href="https://www1.nseindia.com/content/indices/white_paper_IndiaVIX.pdf">Visit nseindia.com/content/indices/white_paper_IndiaVIX.pdf</a>
-
+  <p>Ref link- <a target="blank" href="https://www1.nseindia.com/content/indices/white_paper_IndiaVIX.pdf">Visit nseindia.com/content/indices/white_paper_IndiaVIX.pdf</a></p>
+    
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/INDIA_VIX_Volatality.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
 
 
@@ -192,25 +195,24 @@
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/Nifty50%20Last%201%20Year%20Chart%20with%20Actual%20and%20Forecasted%20Data%20using%20KATS%20Algo.html" id="app"  width="100%" height="388" frameborder="0" scrolling="no"></iframe>
 
 <h2>KATS Forecasting ALGO with LSTM for USD/INR Currency Pair</h2>
-    <p> As Per KATS Model USD/INR value will be crossing 80 rupees in upcoming months due to <b>geo-political</b>b>tensions and *rising inflation* 
+    <p> As Per KATS Model USD/INR value will be crossing 80 rupees in upcoming months due to <b>geo-political</b>tensions and <b>rising inflation</b>
       and <b>intrest rates</b> along the <b>global recession</b> fear.
     Though the forecasted results are quite unusual, may be KATS Algo is not exact future values but able to forecast upcoming trend.
     </p>
 
-    <p>Ref link-</p>
-    <a href="https://www.livemint.com/news/india/rupee-may-slide-to-80-per-us-dollar-by-june-end-say-analysts-11587549796188.html">
-      Visit www.livemint.com/news/india/rupee-may-slide-to-80-per-us-dollar-by-june-end</a>
+    <p>Ref link-<a href="https://www.livemint.com/news/india/rupee-may-slide-to-80-per-us-dollar-by-june-end-say-analysts-11587549796188.html"> Visit www.livemint.com/news/india/rupee-may-slide-to-80-per-us-dollar-by-june-end</a></p>
     
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/USD_INR%20Last%201%20Year%20Chart%20with%20Actual%20and%20Forecasted%20Data%20using%20KATS%20Algo.html" id="app"  width="100%" height="388" frameborder="0" scrolling="no"></iframe>
 
-    <p>Updates as per <b>25-Jun-2022</b></p>
+    <p>Updates as per <b>15-Jul-2022</b></p>
 
-    <p>- Calender Spread Strategy went live with Alerting and Vizualizations.
-         Currently 10 F&O Scripts are being tested in real markets based on liquidity.</p>
+    <xmp>
+      - Calender Spread Strategy went live with Alerting and Vizualizations.Currently 10 F&O Scripts are being tested in real markets based on liquidity.
+      - ML Algo work on hold.
+      - Mean Reversion and Option Strategies R&D, ETL pipeline work completed, Automation based on Real time testing is WIP.
+      - Pair Trading automation is in WIP for BNF/NF Pair along with Max Pain Strategy.
+    </xmp>
 
-      <p>- ML Algo work on hold.</p>
-      <p>- Mean Reversion(Delta Neutral Strategy) R&D, ETL pipeline work completed, Automation based on Real time testing in markets is on hold due to low liquidity because of recent market turmoil.</p>
-      <p>- Pair Trading automation is in WIP for BNF/NF Pair along with Max Pain Strategy.</p> 
 
 <p>As this project is under WIP and timeline of completion cannot be provided (it's depending on Backtesting results on Real Time Data,along with validation of Results in real market)
    Feel free to connect with me regarding any queries, contributions are always welcome!!! 😃</p>

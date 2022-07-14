@@ -1,0 +1,313 @@
+<link rel="shortcut icon" href="https://divyankm.github.io/Stock-Exchange-Data-Analysis/images/favicon.png" type="image/x-icon" />
+
+<h2>Mean Reversion</h2>
+<xmp>
+    - Mean reversion, in finance, suggests that various phenomenan of interest such as asset prices and volatility of returns eventually 
+      revert to their long-term average levels.
+    - The mean reversion theory has led to many investment strategies, from stock trading techniques to options pricing models.</p>
+    - Mean reversion trading tries to capitalize on extreme changes in the price of a particular security, assuming that it will revert to 
+      its previous state.
+</xmp>
+<h3>Weekly Percentage Returns Calculation for NIFTY on Weekly Basis-</h3>
+<p>In below Viz,Percentage Change is calculated based on "Closing Price" of Nifty on weekly basis from-</p>
+<p><b>1. Each Thursday > Viz-1</b></p>
+<p><b>2. Wed to Next Thursday > Viz-2</b></p>
+
+<xmp>
+    - Weekly Percentage Returns are calculated for last 1 year, Max- Last 20 Years of Weekly percent returns can be calculated for observation purpose.
+    - But 1 year data is sufficient to understand,how the weekly percent returns are varying.</p>
+    
+    - Why only Weekly Percent Returns and not other timeframe such as daily,monthly,quarterly,yearl?
+      Because Delta Neutral Option Strategies are being built for Weekly Data for Weekly Expires.Though I calculate percent returns on different
+      timeframes but not sharing results currently.
+</xmp>
+
+<p>Observations on Below Viz-</p>
+<xmp>
+    1. Weekly Percent Returns are varying mostly between -3% to 3% in both cases above.
+    2. When Markets are low volatile especially "vix" < "20",Weekly Percent Returns tries to revert to mean which is 0%.
+
+    Mean Reversion Returns is nothing but Prices trying to revert to its mean values once approach to the extreme high and values.
+
+    In this case,Weekly percent returns above range (-3.1% to 3.1%), will revert to mean.
+    For Daily Percent Returns of Nifty,the extreme values are -1% and 1%,calculated based of moving average of every last 5 days.
+</xmp>
+
+<p>Viz-1</p>
+<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/NF_Mean_Reversion_Returns_on_Expiry Day(Thursday).html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
+<xmp>
+    ##Finding Probablity of NF mean_reversion_returns(Thu) are between -3.1% and 3.1% based on last 1 year Data-
+    nf_mos = nf_weekly_mean_reversion[nf_weekly_mean_reversion['mean_reversion_returns'].between(-3.1, 3.1)]
+    print("NF Rows and Columns",nf_mos.shape)
+    nf_range_pct = (nf_mos.shape[0]/nf_weekly_mean_reversion.shape[0])*100
+    print("NF weekly mean reversion returns between -3.1% to 3.1% is",round(nf_range_pct, 2),"%")
+</xmp>
+
+<xmp>
+    Output-
+    NF weekly mean reversion returns between -3.1% to 3.1% is 82.35 %
+</xmp>
+<p>Viz-2</p>
+<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/NF_Mean_Reversion_Returns_From_Wed(Close)_to_Next_Thu(Close).html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
+<xmp>
+    ##Finding Probablity of NF mean_reversion_returns(Wed-Thu) are between -3.1% and 3.1% based on last 1 year Data-
+    nf_wed_thu_mos = nf_wed_thu_mean_reversion[nf_wed_thu_mean_reversion['wed_thu_mean_reversion'].between(-3.1, 3.1)]
+    nf_wed_range_pct = (nf_wed_thu_mos.shape[0]/(nf_wed_thu_mean_reversion.shape[0]))*100
+    print("NF weekly mean reversion returns between -3.1% to 3.1% is", round(nf_wed_range_pct,2),"%")
+</xmp>
+<xmp>
+    Output-
+    NF weekly mean reversion returns between -3.1% to 3.1% is 80.0 %
+</xmp>
+
+<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/NF_Mean_Reversion_Probability_Distribution_on_Weekly_Expiry_(Thursday).html" id="app" width="50%" height="500" frameborder="0" scrolling="no" align="left" ></iframe>
+<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/NF_Mean_Reversion_Probablity_Distribution_From_Wed_to_Next_Thu.html" id="app" width="50%" height="500" frameborder="0" scrolling="no" align="right" ></iframe>
+
+<p>The Probablity of Weekly Percent Returns is nearly 80% for range between -3.1% to 3.1%</p>
+<p>Probablity and Weekly Percent calculatios is useful in Building option strategis by keeping wider range > (-3.1% & 3.1%) to avoid losses.</p>
+
+<h4>Mean Reversion Returns of Nifty on Daily Basis-</h4>
+<xmp>
+    Nifty Daily Mean Reversion Returns Oscillating between -1% to 1% based on last 1 year data. Once NF hits -1% or 1%, it's reverting back to 0%.
+</xmp>
+
+<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/Nifty_50_Daily_Returns_in_pct.html" id="app" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+
+<h2>Delta Neutral Strategies-</h2>
+<xmp>
+    - Delta neutral strategies are options strategies that are designed to create positions that aren't likely to be affected by small movements 
+    in the price of a security. This is achieved by ensuring that the overall delta value of a position is as close to zero as possible.
+
+    - Delta value is one of the Greeks that affect how the price of an option changes, would strongly recommend that you read the below page. 
+      If you aren't already familiar with how it works.
+
+    - Strategies that involve creating a delta neutral position are typically used for one of three main purposes. They can be used to profit from 
+      time decay, or from volatility, or they can be used to hedge an existing position and protect it against small price movements.
+</xmp>
+
+<p>Before Diving deeper into Delta Nuetral Strategies,would like to share some resources just to understand all the jargons used in the strategies.</p>
+<p><b>Option Basics</b>- <a target="blank" href="https://zerodha.com/varsity/module/option-theory/">Visit zerodha.com/varsity/module/option-theory/</a></p>
+<xmp>
+Option Greeks-
+- Option Greeks such as Delta,Gamma,Vega,Theta,Rho are all derived from complex mathematical calculation,Based on it the option price is decided/calculated.
+- Option Greeks are not calculated for below strategies, but while execution strategy and getting calculated on dev env,but below stat's taken From 
+  standalone colab notebook.
+</xmp>
+<p><b>Option Greeks-</b><a target="blank" href="https://zerodha.com/varsity/chapter/the-option-greeks-delta-part-1/">Visit Zerodha/Varsity/Option-Greeks/</a></p>
+<p><b>For Directional Optional Strategies</b>,Pls refer <a target="blank" href="https://zerodha.com/varsity/module/option-strategies/">Visit Zerodha/Varsity/Option-Strategies/</a></p>
+
+<xmp>
+    POINTS TO NOTE-
+    - Below are some Delta Neutral Strategies(Non-Directional) can be executed based on Implied Volatality and winning Probability.
+    - Currently working on 8+ Delta Nuetral Strategies,4 are stated below.
+    - All calculations/statistics are derived mathematically based on formulas,No assumption are being made.
+    - Below Strategies are executed after market hours on standalone basis for documentation purpose.
+</xmp>
+
+<h3><b>1. Iron Condor</b></h3>
+
+<xmp>
+KEY TAKEAWAYS-
+- An iron condor is a delta-neutral options strategy that profits the most when the underlying asset does not move much, 
+    although the strategy can be modified with a bullish or bearish bias.
+
+- Similar to an iron butterfly, an iron condor is composed of four options of the same expiration: 
+    a long put further out of the money (OTM) and a short put closer to the money, and a long call further OTM and a short call closer to the money.
+
+- Profit is capped at the premium received while the potential loss is capped at the difference between the bought and sold call strikes and 
+    the bought and sold put strikes—less the net premium received.  
+</xmp>
+
+<p>Below Iron Fly Strategy created on NIFTY-50 Index- Vertical Red Dotted line is "Nifty Spot" Price during the execution of strategies in all viz.</p>
+<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/IC_strategy.html" id="app" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+
+<p><b>Statistics-</b></p>
+<xmp>
+    Strategy >>Iron Condor(IC)
+    Execution Time 13-07-2022 (Wednesday) 17:48:29
+    Expiry Date: 21-Jul-2022
+    Leg 1 CE Price ₹ 100.3
+    Leg 1 strikePrice CE 16150
+    Leg 2 CE Price ₹ 20.0
+    Leg 2 strikePrice CE 16500
+    Leg 1 PE Price ₹ 91.0
+    Leg 1 strikePrice PE 15750
+    Leg 2 PE Price ₹ 30.0
+    Leg 2 strikePrice PE 15400
+    lot size: 50
+    daily_volatality: 0.996%
+    Avg IV for Weekly Expiry: 2.635%
+    Upper Range based on IV: 16388
+    Lower Range based on IV: 15546
+    Net Premium Credit in Rupees 141
+    NF Spot Price 15967
+    Lower Breakeven Point 15609
+    Upper Breakeven Point 16291
+    Upper Breakeven Range 325 Points
+    Lower Breakeven Range 358 Points
+    upper_breakeven_pct 2.03 %
+    lower_breakeven_pct -2.24 %
+    NF Range within the trade is profitable 15609 - 16291
+    Max Profit in Rupees 7065
+    Max Loss at CE Side in Rupees -10435
+    Max Loss at PE Side in Rupees 10435
+    Risk Reward Ratio: 0.68
+    Probablity of Profit between range -2.24% to 2.03% is: 66.67 %
+    Probable Range of Nifty calculated from Implied Volatality based for 1-SD is 15546 to 16388.
+</xmp>
+
+<h3><b>2. Iron Fly/Iron Butterfly-</b></h3>
+
+<xmp>
+KEY TAKEAWAYS-
+-The iron butterfly strategy is a credit spread that involves combining four options, which limits both risk and potential profit.
+
+-The strategy is best employed during periods of lower price volatility.
+</xmp>
+
+<p>Below Iron Fly Strategy created on NIFTY-50 Index</p>
+<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/Iron_Fly.html" id="app" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+
+<p><b>Statistics-</b></p>
+<xmp>
+    Strategy >>Iron Fly(IF)
+    Execution Time 13-07-2022 (Wednesday) 18:14:01
+    Expiry Date: 21-Jul-2022
+    Leg 1 CE Price ₹ 194.45
+    Leg 1 strikePrice CE 15950
+    Leg 2 CE Price ₹ 25.55
+    Leg 2 strikePrice CE 16450
+    Leg 1 PE Price ₹ 163.0
+    Leg 1 strikePrice PE 15950
+    Leg 2 PE Price ₹ 35.35
+    Leg 2 strikePrice PE 15450
+    daily_volatality: 0.436%
+    Avg IV for Weekly Expiry: 1.154%
+    Upper Range based on IV: 16151
+    Lower Range based on IV: 15783
+    Net Premium Credit in Rupees 297
+    NF Spot Price 15967
+    Lot Size: 50
+    Lower Breakeven Point 15653
+    Upper Breakeven Point 16247
+    Upper Breakeven Range 280 Points
+    Lower Breakeven Range 313 Points
+    upper_breakeven_pct 1.75 %
+    lower_breakeven_pct -1.96 %
+    NF Range within the trade is profitable 15653 - 16247
+    Max Profit in Rupees 14827
+    Max Loss at CE Side in Rupees -10173
+    Max Loss at PE Side in Rupees 10173
+    Risk Reward Ratio: 1.46
+    Probablity of Profit between range -1.96% to 1.75% is: 56.86 %
+    Probable Range of Nifty based on Implied Volatality based for 1SD 15783 to 16151
+</xmp>
+
+<h3><b>3. CE/Call Ratio Spread-</b></h3>
+
+<xmp>
+    KEY TAKEAWAYS-
+
+    - A ratio spread involves buying a call option that is ATM or OTM, and then selling two (or more) of the same option further OTM.
+    - Buying and selling calls in this structure are referred to as a call ratio spread.
+    - There is a high risk if the price moves outside the strike price of the sold options, 
+      while the maximum profit is the difference in strikes plus the net credit received.
+</xmp>
+
+<p>Below is CE Ratio Spread Strategy created on NIFTY-50 Index</p>
+<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/CE_Ratio_Spread.html" id="app" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+    
+<p><b>Statistics-</b></p>
+
+<xmp>
+    Strategy >>CE Ratio Spread
+    Execution Time 13-07-2022 (Wednesday) 18:37:56
+    Expiry Date: 21-Jul-2022
+    Lot Size: 50
+    Lot Size Ratio- 1:3
+    Leg 1 CE Price ₹ 43.0
+    Leg 1 strikePrice CE 16350
+    Leg 2 CE Price ₹ 82.0
+    Leg 2 strikePrice CE 16200
+    Daily Volatality: 0.865%
+    impliedVolatility Leg 1 CE: 16.37
+    impliedVolatility Leg 2 CE: 16.69
+    Avg IV for Weekly Expiry: 2.289%
+    Lower Range based on IV: 15602
+    Upper Range based on IV: 16332
+    Probable Range of Nifty based on Implied Volatality based on 1SD 15602 to 16332
+    Nifty Spot:15967.0
+    Upper Breakeven 16448
+    upper_breakeven_pct 3.01 %
+    strikeprice_ce_max_p 16350
+    Max Profit in Rs 9850.0
+    Min Profit in Rs 2350
+    Max Loss is unlimited as CE leg are not hedged.
+    Probablity of Profit between range -∞ to 3.01% is: 84.31 %
+</xmp>
+
+<h3><b>4. PE/PUT Ratio Spread-</b></h3>
+
+<xmp>
+    KEY TAKEAWAYS-
+
+    - A ratio spread involves buying a put option that is ATM or OTM, and then selling two (or more) of the same option further OTM.
+    - Buying and selling puts in this structure are referred to as a put ratio spread.
+    - There is a high risk if the price moves outside the strike price of the sold options, 
+      while the maximum profit is the difference in strikes plus the net credit received.
+</xmp>
+    
+<p>Below is CE Ratio Spread Strategy created on NIFTY-50 Index</p>
+<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/PE_Ratio_Spread.html" id="app" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+    
+<p><b>Statistics-</b></p>
+<xmp>
+    Strategy >>PE Ratio Spread
+    Execution Time 13-07-2022 (Wednesday) 18:51:28
+    Expiry Date: 21-Jul-2022
+    Lot Size Rattio- 1:3
+    impliedVolatility Leg 1 PE 21.83
+    impliedVolatility Leg 2 PE 21.34
+    Leg 1 PE Price ₹ 41.55
+    Leg 1 strikePrice PE 15500
+    Leg 2 PE Price ₹ 58.0
+    Leg 2 strikePrice PE 15600
+    Daily Volatality: 1.13%
+    Avg IV for Weekly Expiry: 2.99%
+    Lower Range based on IV: 15490
+    Upper Range based on IV: 16444
+    Nifty Spot:15967.0
+    Lower Breakeven 15417
+    Lower Breakeven Range: 550 Points
+    Lower Breakeven Pct -3.44 %
+    Max Profit in Rs 8332.0
+    Min Profit in Rs 3332
+    Max Loss can be considered as unlimited as PE leg are not hedged.
+    Probable Range of Nifty based on Implied Volatality based on 1SD 15490 to 16444
+    Probablity of Profit between range -3.44% to +∞ is: 88.24 %
+</xmp>
+
+<xmp>
+    Currently in WIP-
+    All Strategies will be getting backtested periodically during Market Hours(Real Time) with different set of "strikePrices" only on Wed and Thu 
+    for next weekly Expiry to get best Risk/Reward Strategy interms of Profits as well as Probablity of profit.
+
+    Profits and Probablity of Profits are inversely propertional but still Algo will find the right balance as per risk appetite and suggest best
+    probable strategy/trades to executes along with all other stat's to have better clarity.
+</xmp>
+<xmp>
+    My Thoughts-
+
+    "No Guaranteed" Returns/Profits can be expected,Even "No Strategy" offer "100%" Probablity of Profits.It's all depend on Market Condition's.
+
+    Atleast by above stat's we can set realistic expection's as we are getting probablity from the past and market tend to perform in similar manner,
+    but not the exact way we are expecting.
+
+    Even Further the risk can mitigated by hedging the position/strategies during the uncertainites, Mostly during "Black Swan Events".
+    Ex-Covid Lockdown Event after Mar-15-2020,though the "vix", started spiking above 20 even before 1'st Mar 2020 give's an idea of volatality can rise
+    in near future.
+    Another Black Swan Event on date- 24-Feb-2022 "Russia-Ukraine War",but again vix was above "20" from "14-Feb-2022" which can be refer as Tool-
+    to guage volatality. 
+
+    "the eternal truth is: only two people can buy at the bottom and sell at the top – one is God and the other is a liar."
+</xmp>
