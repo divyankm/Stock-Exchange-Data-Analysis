@@ -1,0 +1,114 @@
+<link rel="shortcut icon" href="https://divyankm.github.io/Stock-Exchange-Data-Analysis/images/favicon.png" type="image/x-icon" />
+
+<h2>Directional/Momentum Based Strategies</h2>
+
+<xmp>
+    - KEY TAKEAWAYS
+
+    - Momentum Strategies/Trending strategies is designed to take advantage of uptrends, where the price tends to make new highs, or downtrends, 
+      where the price tends to make new lows.
+    - An uptrend is a series of higher swing highs and higher swing lows. A downtrend is a series of lower swing highs and lower swing lows.
+    - In addition to looking at swing highs and lows, trend traders utilize other tools such as trendlines, moving averages, and technical indicators 
+      to help identify the trend direction and potentially provide trade signals.
+</xmp>
+
+<p style="font-size:15px">
+   <a href="https://www.investopedia.com/terms/t/trendtrading.asp" target="_blank">Momentum Strategies</a> are generally derived from <a href="https://zerodha.com/varsity/module/technical-analysis/" target="_blank">Technical Analysis</a> of any security such as Share,Index,ETF and F&O contracts based on price action.<br>
+   <a href="https://zerodha.com/varsity/module/technical-analysis/" target="_blank">Technical Analysis</a> is purely based on Theories driven by prominent Statistican's, Mathematician's which include mathematically driven formula's result's in formation of <a href="https://zerodha.com/varsity/module/technical-analysis/" target="_blank">indicators</a>.<br>
+   <a href="https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/overview" target="_blank">List and Type of Indicators.</a>There are 100+ indicators and still counting but some are <a href="https://www.elearnmarkets.com/blog/9-technical-analysis-indicator-tools/" target="_blank">widely used</a>.<br>
+   Technical Analysis is bit vast subject but Varsity's <a href="https://zerodha.com/varsity/module/technical-analysis/" target="_blank">Technical Analysis</a> chapter cover's most important topics.TA is synonymous with DA(Data Analysis).<br>
+   In TA Data is in terms of price(numbers), while in DA data could be in numeric as well as non-numeric form.
+</p>
+
+<p>
+  On Lighter Note,during my initial day's I do tried to create custom TA indicator(R&D) and thought of giving my name to it.Though no progress is done 🤦‍♂️.
+</p>
+
+<p><b>Below is/are some Momentum Strategies I am building/implementing during Market Hours.</b></p>
+
+<h2>1. ATR Based Stoploss Trailing Strategy- </h2>
+
+<p style="text-indent:30px;font-size:15px">ATR Trailing Stop Loss strategy basic functionality/working is stated <a href="https://www.incrediblecharts.com/indicators/atr_average_true_range_trailing_stops.php" target="_blank">here.</a>
+        Configuration of ATR indicator is default which is set as 3 x 21-Day ATR in my trading terminal.</p>
+
+<p style="text-indent:30px;font-size:15px">Before Diving deeper into Entry and Exit,Let's understand thought process behind it.</p>
+<p style="text-indent:30px;font-size:15px">  I will be initiating/implementing this strategy on Major <a href="https://www.niftyindices.com/NSE" target="_blank"> NSE indices</a> such as Nifty 50,Nifty Bank and Nifty IT and buying  
+    <a href="https://www.indiaetfs.in/" target="_blank"> ETF's</a> of that particular index such as NIFTYBEES,BANKBEES and ITBEES based on my Entry Points. 
+    <a href="https://www.niftyindices.com/indices/equity/broad-based-indices" target="_blank"> List</a> of other indices.
+</p>
+<h3 style="text-indent:30px">Entry/Initiating Strategy-</h3>
+
+<xmp>
+    - Buying ETF(from exchange), when MRR indicating -1% or below, indicate that the particular is near it's bottom and price's will likely to move upward sooner or later.
+    - Same can be seen in Viz. I have backtested on more than 15+ year's of data before GA with it.Though I am sharing VIZ of last 1 year of BackTested Data.
+      Still the Trend is same of 15+ years of data and Market's (Indices) tend to move in Cycles.
+</xmp>
+<p style="text-indent:30px;font-size:15px">Below Viz Shows Mean Reversion Return(MRR) of 3 indices. When the MRR falls below -1% then it generate buy Signal.Initiate/Enter Strategy after generating buy signal.</p>
+<p style="text-indent:30px;font-size:15px">Do Click on Individual Legends on top left corner in Viz to see individual MRR for indices.</p>
+<iframe src="etf_buying_based_on_mrr.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
+
+<xmp>
+    - Rationale behind selecting only 3 specific indices.
+      1. ETF of these 3 indices are highly liquid(easy to transact on exchange/secondary market), result in lower slippage while making transaction, otherwise illiquid 
+         ETF's can reduce profits.
+      2. India's Top Companies are present in these 3 indices such as INFY,TCS,HDFC etc which make it reliable to execute and does not depend on single company result in 
+         we are seeing cyclic returns in Mean Reversion mostly moving between -1% to 1%.
+         While if Strategy implemented on Single listed company on exchange, the risk increased exponentially so it will be tracking single company instead list of
+         group of companies present in Index.
+
+      Off Topic Thought's-
+      "ETF's are considered are Great investment instrument's,It provide cushion again volatality and help's in generating returns which beat's inflation."
+       Giving Above Statement strictly based on Past Performace(Historical Data),"No Guarantee" can be given for the same in Future in this uncertain world.
+</xmp>
+
+<h3 style="text-indent:30px">Exit Strategy-</h3>
+
+<xmp>
+    - Selling ETF(on exchange), when MRR indicating +1% or above, indicate that the particular is near it's top and price's will likely to move downward sooner or later
+      (for shorter or longer period of time, based on realtime movement of price of indices).
+    - Same can be seen in Viz. I have backtested on more than 15+ year's of data before GA with it.Though I am sharing VIZ of last 1 year of BackTested Data.
+      Still the Trend is same of 15+ years of data and Market's (Indices) tend to move in Cycles.
+</xmp>
+
+<h3 style="text-indent:30px">Another Exit Strategy Based on ATR Based Trailing Stoploss-</h3>
+
+<p style="text-indent:30px;font-size:15px">Once Strategy is Initiated/Entered,a trailing stop loss can be set on indices using ATR Trailing Stop Loss indicator in the trading terminal directly.</p>
+
+<xmp>
+    - Entry and Exit's are equally important which will determine the P&L.
+    - Exit based on MRR and ATR based Trailing Stop Loss indicator will be different.Will take some time the determine merit's and demerits of both exit strategies.
+    - This Strategy is implemented strictly implemented in Cash Markets (on exchange).If transacting in ETF's,it cannot be implemented in Future and Option Market/Segmet(F&O).
+    - This Strategy cannot be implemeted on Intraday Basis, It's Cash and Carry(CNC) based strategy. Also Short Selling is not permitted by exchanges(Heavy penalities/fines 
+      are applicable) on ETF's which comes under cash segment.
+    - Strategy should initiate with buying only, if intiated strategy with selling ETF's will be called Short Selling ,will result in heavy fines.
+    
+    - Strategy should exit with selling same quantity of ETF which are bought during Entering/Buying Strategy.
+      Ex- I brought NIFTYBEES(ETF) at Rs 167/piece having quantity-500 shares, of value=167*500= Rs 83500 on 17-Jun-2022, when MRR of Nifty-50 is at -1%.
+          After 10 day's on 22-Jul-2022, MRR moves close to +1%, and price of NIFTYBEES ETF was Rs 182/piece and sold to that price of quantity-500 shares. 
+          So Net P&L will be =(Selling value-Buying Value)*quantity = (182-167)*500 = Rs +7500 Profit.
+          Can Verify MRR Returs from above VIZ.
+    
+    **Like Above Example, Buying and Selling timeframes will depend on buying and exit strategies.(No assumptions are being made)
+    - Timeframe to stay put in strategy solely based on decision of executing person, though a set of parameters when to exit are discussed above.
+
+    - From Developer and Scalability POV, this strategy is highly agile,easy,efficient to code,automate,viz/dashboard creation and alert monitoring buying and selling signal
+      generation based on MRR parameters as well as ATR Based Trailing Stop loss.
+      
+      **From my side,this strategy currently implemented in dev env and automation(ETL pipeline/Database/VIZ/Dashboard/Alerting Module) is completed.      
+</xmp>
+
+<p >Another Momentum based Strategy is in WIP based on USD/INR Futures,also planning for Sharing P&L Results on above strategy based in upcoming days,will share once completed.
+    I tried to put every aspect into consideration of above strategy as per my best knowledge.If any queries do raise PR on this repo for any correction / clarification.
+    Will be happy to help/solve queries.<br>
+    <b>*This Information is just for knowledge purpose,never consider it as investment advice,"No Guaranteed" profit's can be assured in any strategy.</b>
+  </p>
+
+
+
+
+
+
+
+
+
+
