@@ -2,26 +2,63 @@
 
 <h2>Calender Spreads </h2>
 
-<p><b>Vizualizations are created in Grafana and Opensearch Dashboards.</b></p>
+<p>
+    Algorithm will scan all F&O intruments listed in NSE in realtime and generate alerts.Currently 150+ F&O intruments listed on NSE.<br>
+    <b>Future Scope</b>- Algorithm will take trade based on 1 year backtested results without any human intervention.<br>
+    Post Automation, when Spread increases or decreases,user will get notification in real time on mobile,email or any messenger apps via webhooks 
+    and execute cal. spreads strategy. <br>
+    <b>Calender Spread Strategy went live with Alerting and Vizualizations.Currently 10 F&O Scripts are being tested in real markets based on liquidity.</b>
+</p>
 
 <h3>Grafana Dashboard Snapshot</h3>
 
 <button><a target="blank" style="background-color:green; border:none; font-size: 15px;
- padding: 12px 28px;margin: 2px 2px; color:white;display: inline-block" href="https://snapshots.raintank.io/dashboard/snapshot/260B8W5IExpJ5Pt0Ng6PW7mn8IwLmI4S" title="">Dashboard</a></button>
+ padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://snapshots.raintank.io/dashboard/snapshot/260B8W5IExpJ5Pt0Ng6PW7mn8IwLmI4S" title="">Dashboard</a></button>
 
     <!-- <iframe src="https://snapshots-origin.grafana.net/dashboard/snapshot/44mWKMg1NS0Mon7qykwtfxRkdhfFLJVe?orgId=2" id="app" width="650" height="300" frameborder="0" scrolling="no" ></iframe> -->
 
 <p><b>Below are few backtested results on 7 months/200 Days of Continuous Futures data Visualization created using Plotly on some F&O Scripts</b></p>
 
+
+<!-- <p><b>Ex- Continuous NIFTY FUT Range spread of Current(Jun) and Next (Jul) Month spread range show in below vizualization and condition's when to execute calender spreads.</b></p> -->
+<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/NIFTY_FUT_Calender_Spread.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" align="right"></iframe>
+
 <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/UNITEDSPIRITS_FUT_Calender_Spread.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" align="left"></iframe>
 <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/GODREJPROP_FUT_Calender_Spread.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" align="right"></iframe>
 <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/TCS_FUT_Calender_Spread.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" align="right"></iframe>
 <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/RELIANCE_FUT_Calender_Spread.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" align="right"></iframe>
-<iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/NIFTY_FUT_Calender_Spread.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" align="right"></iframe>
 <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/HAVELLS_FUT_Calender_Spread.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" align="right"></iframe>
 <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/TITAN_FUT_Calender_Spread.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" align="right"></iframe>
 <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/ICICIGI_FUT_Calender_Spread.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" align="right"></iframe>
 <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/INFY_FUT_Calender_Spread.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" align="right"></iframe>
 
+<p><b>Observations-</b></p>
 
+<xmp>
+    1. Mostly Cal. Spread Opportunities arises at Monthly Expiry Day or in last week on Month.
 
+    2. Out of 150 F&O Scripts,only 15 Scripts are liquid means Daily Volumne > 1m (million) transactions.So Scripts having < 1m Volumes should be avoided.
+       Reasons- If Cal. Spread implemented on illiquid scripts,the SLIPPAGE will increase which will significantly reduce the Cal. Spread Range.
+                Illiquid Stocks/ETF/Futures/Options are highly volatile and risky to take any trades- long/short and Intraday/CNC/NRML. 
+                Illiquid Scripts has high Bid/Ask Price(Spread Range) which increases slippage results in reducing profits.
+
+    3. As it's an Arbitrage Strategy,where we are looking purely on Price Mismatch between two Monthly Futures Contracts and execute it accordingly.
+       This Strategy is Fully Hedged so it attracts low margins,but for Initiating Cal. Spreads margins requirement are high,once Hedged margins reduced.
+       The P&L will be small with very low risk,with high probablity of Winning Trades based on Past Data.Cal Spreads can be Scaled Horizontally by excuting it
+       on multiple Scripts and Vertically by increasing the "Lot Size" of single script.P&L is directly propertional with increase/decrease of "Lot Size".
+</xmp>
+
+<p><b>Glossary</b></p>
+
+<p>
+    <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 12px;margin: 0px 0px; color:white;display: inline-block" href="https://learn.robinhood.com/articles/0SecVg50Rc90Oc0RjWkD4/what-is-arbitrage/" title="">Arbitrage Strategy</a></button>
+    <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://www.thebalance.com/trading-definitions-of-bid-ask-and-last-market-prices-1031026" title="">bid-ask-price</a></button>
+    <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://economictimes.indiatimes.com/definition/bid-ask-spread" title="">bid-ask-spread</a></button>
+    <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://zerodha.com/varsity/chapter/calendar-spreads/" title="">calender spread</a></button>
+    <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://support.zerodha.com/category/trading-and-markets/margin-leverage-and-product-and-order-types/articles/what-does-cnc-mis-and-nrml-mean" title="">CNC vs intraday vs NRML</a></button>
+    <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://zerodha.com/varsity/chapter/futures-trade/" title="">futures contract Example</a></button>
+    <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://blog.apruve.com/liquid-vs.-illiquid-market" title="">liquid vs illiquid</a></button>
+    <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://www.thebalance.com/long-and-short-trading-term-definitions-1031122" title="">long vs short trades</a></button>
+    <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://corporatefinanceinstitute.com/resources/knowledge/trading-investing/slippage/" title="">slippage</a></button>
+    <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://zerodha.com/varsity/chapter/volumes/" title="">volumes</a></button>   
+</p>

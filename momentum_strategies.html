@@ -12,7 +12,7 @@
       to help identify the trend direction and potentially provide trade signals.
 </xmp>
 
-<p style="font-size:15px">
+<p style="text-indent:30px;font-size:15px">
    <a href="https://www.investopedia.com/terms/t/trendtrading.asp" target="_blank">Momentum Strategies</a> are generally derived from <a href="https://zerodha.com/varsity/module/technical-analysis/" target="_blank">Technical Analysis</a> of any security such as Share,Index,ETF and F&O contracts based on price action.<br>
    <a href="https://zerodha.com/varsity/module/technical-analysis/" target="_blank">Technical Analysis</a> is purely based on Theories driven by prominent Statistican's, Mathematician's which include mathematically driven formula's result's in formation of <a href="https://zerodha.com/varsity/module/technical-analysis/" target="_blank">indicators</a>.<br>
    <a href="https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/overview" target="_blank">List and Type of Indicators.</a>There are 100+ indicators and still counting but some are <a href="https://www.elearnmarkets.com/blog/9-technical-analysis-indicator-tools/" target="_blank">widely used</a>.<br>
@@ -20,19 +20,18 @@
    In TA Data is in terms of price(numbers), while in DA data could be in numeric as well as non-numeric form.
 </p>
 
-<p>
+<p style="text-indent:30px">
   On Lighter Note,during my initial day's I do tried to create custom TA indicator(R&D) and thought of giving my name to it.Though no progress is done 🤦‍♂️.
 </p>
 
-<p><b>Below is/are some Momentum Strategies I am building/implementing during Market Hours.</b></p>
+<p style="text-indent:30px"><b>Below is/are some Momentum Strategies I am building/implementing during Market Hours.</b></p>
 
-<h2>1. ATR Based Stoploss Trailing Strategy- </h2>
+<h2>1. ATR Based Stoploss Trailing in ETF's (Exchange Traded Funds)- </h2>
 
 <p style="text-indent:30px;font-size:15px">ATR Trailing Stop Loss strategy basic functionality/working is stated <a href="https://www.incrediblecharts.com/indicators/atr_average_true_range_trailing_stops.php" target="_blank">here.</a>
         Configuration of ATR indicator is default which is set as 3 x 21-Day ATR in my trading terminal.</p>
 
-<p style="text-indent:30px;font-size:15px">Before Diving deeper into Entry and Exit,Let's understand thought process behind it.</p>
-<p style="text-indent:30px;font-size:15px">  I will be initiating/implementing this strategy on Major <a href="https://www.niftyindices.com/NSE" target="_blank"> NSE indices</a> such as Nifty 50,Nifty Bank and Nifty IT and buying  
+<p style="text-indent:30px;font-size:15px">Initiating/Implementing strategy on Major <a href="https://www.niftyindices.com/NSE" target="_blank"> NSE indices</a> such as Nifty 50,Nifty Bank and Nifty IT and buying  
     <a href="https://www.indiaetfs.in/" target="_blank"> ETF's</a> of that particular index such as NIFTYBEES,BANKBEES and ITBEES based on my Entry Points. 
     <a href="https://www.niftyindices.com/indices/equity/broad-based-indices" target="_blank"> List</a> of other indices.
 </p>
@@ -43,12 +42,14 @@
     - Same can be seen in Viz. I have backtested on more than 15+ year's of data before GA with it.Though I am sharing VIZ of last 1 year of BackTested Data.
       Still the Trend is same of 15+ years of data and Market's (Indices) tend to move in Cycles.
 </xmp>
+
 <p style="text-indent:30px;font-size:15px">Below Viz Shows Mean Reversion Return(MRR) of 3 indices. When the MRR falls below -1% then it generate buy Signal.Initiate/Enter Strategy after generating buy signal.</p>
 <p style="text-indent:30px;font-size:15px">Do Click on Individual Legends on top left corner in Viz to see individual MRR for indices.</p>
 <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/etf_buying_based_on_mrr.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>
 
 <xmp>
     - Rationale behind selecting only 3 specific indices.
+
       1. ETF of these 3 indices are highly liquid(easy to transact on exchange/secondary market), result in lower slippage while making transaction, otherwise illiquid 
          ETF's can reduce profits.
       2. India's Top Companies are present in these 3 indices such as INFY,TCS,HDFC etc which make it reliable to execute and does not depend on single company result in 
@@ -83,9 +84,9 @@
     - Strategy should initiate with buying only, if intiated strategy with selling ETF's will be called Short Selling ,will result in heavy fines.
     
     - Strategy should exit with selling same quantity of ETF which are bought during Entering/Buying Strategy.
-      Ex- I brought NIFTYBEES(ETF) at Rs 167/piece having quantity-500 shares, of value=167*500= Rs 83500 on 17-Jun-2022, when MRR of Nifty-50 is at -1%.
-          On 22-Jul-2022, MRR moves close to +1%, and price of NIFTYBEES ETF was Rs 182/piece and sold to that price of quantity-500 shares. 
-          So Net P&L will be =(Selling value-Buying Value)*quantity = (182-167)*500 = Rs +7500 Profit.
+      Ex- I brought NIFTYBEES(ETF) at ₹ 167/piece having quantity-500 shares, of value=167*500= ₹ 83500 on 17-Jun-2022, when MRR of Nifty-50 is at -1%.
+          After 10 day's on 22-Jul-2022, MRR moves close to +1%, and price of NIFTYBEES ETF was ₹ 182/piece and sold to that price of quantity-500 shares. 
+          So Net P&L will be =(Selling value-Buying Value)*quantity = (182-167)*500 = ₹ +7500 Profit.
           Can Verify MRR Returs from above VIZ.
     
     **Like Above Example, Buying and Selling timeframes will depend on buying and exit strategies.(No assumptions are being made)
@@ -97,12 +98,28 @@
       **From my side,this strategy currently implemented in dev env and automation(ETL pipeline/Database/VIZ/Dashboard/Alerting Module) is completed.      
 </xmp>
 
-<p >Another Momentum based Strategy is in WIP based on USD/INR Futures,also planning for Sharing P&L Results on above strategy based in upcoming days,will share once completed.
-    I tried to put every aspect into consideration of above strategy as per my best knowledge.If any queries do raise PR on this repo for any correction / clarification.
-    Will be happy to help/solve queries.<br>
-    <b>*This Information is just for knowledge purpose,never consider it as investment advice,"No Guaranteed" profit's can be assured in any strategy.</b>
-  </p>
+  <p style="text-indent:30px;font-size:15px"></pstyle>ATR-TS (Avg True Range Trailing Stoploss) with Configuration of periods=14 and muliplier=3</p>
 
+  <iframe src="nifty50-atr_ts.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" ></iframe>
+<!-- <iframe src="atr_ts.gif" id="app" width="100%" height="100%" frameborder="0" scrolling="no" ></iframe> -->
+
+<h2>2. ATR Based Trailing Stoploss in USD/INR FUT</h2>
+
+  <p style="text-indent:30px;font-size:15px"></pstyle>ATR-TS (Avg True Range Trailing Stoploss)on Daily timeframe with Configuration of periods=7 and muliplier=3.</p>
+  <iframe src="usd_inr_atr_ts.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" ></iframe>
+
+<p >If any queries do raise PR on this repo for any correction / clarification.Will be happy to help/solve queries.<br>
+    <b>*This Information is just for knowledge purpose,never consider it as investment advice,"No Guaranteed" profit's can be assured in any strategy.</b>
+</p>
+
+<p><b>Glossary</b></p>
+
+<p> 
+  <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://zerodha.com/varsity/chapter/exchange-traded-funds-etf/" title="">ETF's</a></button>
+  <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://www.thebalance.com/long-and-short-trading-term-definitions-1031122" title="">long vs short trades</a></button>
+  <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://groww.in/p/trailing-stop-loss" title="">trailing-stop-loss</a></button>
+  <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 28px;margin: 0px 0px; color:white;display: inline-block" href="https://zerodha.com/varsity/chapter/the-usd-inr-pair/" title="">USD/INR FUT</a></button>
+</p>
 
 
 
