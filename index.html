@@ -28,7 +28,7 @@
         </h1>
         
           <h2 class="fw1 f5 f3-l white-40 measure-wide-l center mt3">
-            Mean Reversion Method | Probablity Distribution | Forecasting Algorithm | Delta Neutral Strategy | Calender Spreads | Pair Trading | MAX PAIN Range
+              Calender Spreads | DCF & Reverse Model | Delta Neutral Strategy | Forecasting Algorithm | MAX PAIN Range | Momentum Strategy |Probablity Distribution | Pair Trading
           </h2>
         
       </div>
@@ -41,13 +41,13 @@
       <p>👨‍💻 This is Basic version of webpage,more improvement will be coming overtime along with Automation 👨‍💻, Currently WIP</p>
       
       <p>Coding Language- Python</p>
-      <p>Current Libraries- Investpy | Plotly | KATS | stats model | AUTOTS | Pandas | Google Colab | Beautifulsoup</p>
-      <p>Topics Covered- Data Science | Statistics | Maching Learning | API's & Web Development | Automation | Web Scrapping</p>
+      <p>Current Libraries- Investpy | Plotly | KATS | stats model | AUTOTS | Pandas | Yahoo Financials</p>
+      <p>Topics Covered- Automation | Data Science | Statistics | Machine Learning | DBA(Wareshousing) </p>
       <p>Database- mySQL | OpenSearch</p>
       <p>Vizualization and Alerting Tool- OpenSearch Dashboards | Grafana</p>
       <p>Orchestration Tool-Docker Container(Docker Compose)</p>
-      <p>Data Pipelines-Python Scripts Extracting data using API's,transforming and loading data to database.</p>
-      <p>Current OS-Windows 10 Pro. (Fut Scope-Dev env Migration to AWS(Linux))</p>
+      <p>Data Pipelines-ETL Python Scripts</p>
+      <p>Current OS-Windows 10 Pro. (Fut Scope- VM(Linux))</p>
       <p>CICD- Not on cards till dev env working in local machine(Windows OS)</p>
 
   </article>
@@ -75,6 +75,7 @@
     <xmp>
       Post Automation Probablity Distribution can be calculated using single click of any Stock or Index.
       It gives fair idea about Probability Percent of Stock/Index moving between percent range.
+      Below Viz using Data for Last 1 Year,contains 248 Working Days.
     </xmp>
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/Nifty_50_Normalised_Distrubution_of_Daily_Returns.html" id="app" width="50%" height="500" frameborder="0" scrolling="no" align="left"></iframe>
@@ -156,7 +157,7 @@
     <p style="text-indent:30px"><b> Post Automation MAX PAIN Range can be calculated for any F&O Script.</b></p>
     <p style="text-indent:30px">Ref link-<a target="blank" href="https://zerodha.com/varsity/chapter/max-pain-pcr-ratio/">Visit zerodha/varsity/chapter/max-pain-pcr-ratio</a></p>
    
-    <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/MAX_PAIN_Calculation_for_Weekly_Expiry.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>    
+    <iframe src="MAX_PAIN_Calculation_for_Weekly_Expiry.html" id="app" width="100%" height="500" frameborder="0" scrolling="no" ></iframe>    
 
 <h2>INDIA VIX Index</h2>
 
@@ -207,10 +208,26 @@
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/nifty50_Last_1_year_chart_with_actual_and_Forecasted_data_HW.html" id="app"  width="100%" height="388" frameborder="0" scrolling="no"></iframe>
 
+<h3 style="text-indent:30px">HW & MC Forecasting Results-</h3>
+<xmp>
+      - A Monte Carlo simulation is a model used to predict the probability of a variety of outcomes when the potential for random variables is present.
+      - It help to explain the impact of risk and uncertainty in prediction and forecasting models.A Monte Carlo simulation requires assigning multiple values to an 
+        uncertain variable to achieve multiple results and then averaging the results to obtain an estimate.
+      - It assume perfectly efficient markets.
+
+      - In NF-50 Forecasting use-case, MC publishing 10 possible Forecasting results based on Trained data and final Forecasted result will be "mean" of it.
+      - Another use-case with MC is the geometric Brownian motion (GBM), which is technically a Markov process. This means the stock price follows a random walk and is 
+        consistent with (at the very least) the weak form of the efficient market hypothesis (EMH)—past price information is already incorporated, and the next price 
+        movement is "conditionally independent" of past price movements.
+</xmp>
+
+    <iframe src="NF50_HW&MC_Forecasting_results.html" id="app"  width="100%" height="388" frameborder="0" scrolling="no"></iframe>
+
 <h3 style="text-indent:30px">Holt Winter Algorithm Nifty 50 Training, Testing and Forecasting Chart-</h3>
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/nifty-50_HW_forecasting_chart.html" id="app"  width="100%" height="388" frameborder="0" scrolling="no"></iframe>
-    
+        
+
 <h3 style="text-indent:30px">KATS Forecasting ALGO with LSTM for NIFTY 50</h3>
 
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/nifty50_Last1_Year_Chart_with_Actual_and_Forecasted_Data_using_KATS_Algo.html" id="app"  width="100%" height="388" frameborder="0" scrolling="no"></iframe>
@@ -225,27 +242,42 @@
     
     <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/usd_inr_Last_1_Year_Chart_with_actual_and_forecasted_data using_KATS_Algo.html" id="app"  width="100%" height="388" frameborder="0" scrolling="no"></iframe>
 
-    <p style="text-indent:30px">Last updated on <b>28-Aug-2022</b></p>
+<p>Last updated on <b>24-Sep-2022</b></p>
 
     <xmp>
-      - Calender Spread Strategy went live with Alerting and Vizualizations.Currently 10 F&O Scripts are being tested in real markets based on liquidity.
-      - ML Algo work on hold.
-      - Mean Reversion and Option Strategies R&D, ETL pipeline work completed, Automation based on Real time testing is WIP.
-      - Pair Trading automation is in WIP for BNF/NF Pair along with Max Pain Strategy.
-      - Momentum Strategies module is in WIP,will add more strategies.
+      - Calender Spread Strategy went live with Alerting and Vizualizations.Currently 20 F&O Scripts are being tested in real markets based on liquidity.
+      
+      - Delta Neutral Option Strategies is being executed on Weekly basis based on Market conditions and results are presented in DN option strategy module. 
+      
+      - Dashboards preparation WIP in Grafana for all use cases,Alerting module will be configured later.
+      
+      - Momentum Strategies module is in WIP,will add more strategies in this module.
+        i) ATR-TS ETF ii)USD/INR FUT is implemented in live markets,results will be shared soon !!!
+      
+      - Analysis of Option Chain and in WIP along with dedicated ETL pipelines for data storage and Dashboard building.ML Model can be built on Top of it.
+      
+      - Calculation of Statistical parameters based on Historical Volatality,Analysis,Storage,Vizualizations completed.Parameters are ready,Design of Data Wareshousing in WIP.
+      
+      - Discount Cash Flow(DCF) & Reverse DCF sample code implemented,ETL(Wiring,Storage,Analysis,Vizualization) in WIP.This module belongs to Investing Category.
+      
+      - ML Algo work and Pair Trading automation is put on hold.Pair Trading Execution doubtful in Options(Discouraging results while backtesting on Excel Sheets on last 3 Months
+        Data), won't be backtesting for Futures(derivative) any time soon.
     </xmp>
 
+<p><b>Project Timeline:</b></p>
 
 <xmp>
       - As this project is under WIP and timeline of completion cannot be provided (it's depending on Backtesting results on Real Time Data,along with validation of Results 
-        in real market), Feel free to connect with me regarding any queries, contributions are always welcome!!! 😃
+        in real market), Feel free to connect with me regarding any queries,contributions,corrections are always welcome!!! 😃
   
       - If any queries do raise PR on this repo in github for any correction/clarification,will be happy to correct/help/solve queries.Timeline to go Live with Viz/Dashboard/
         Alerting to be accessible to everyone cannot be given right now.It's still in premature stage.
 
-      - Working on Frontend Development for first time,not my core skills,trying to improve UI of webpage during every update.If anyone want's to improve GUI for webpages, html pages are 
-        present in git repo,do raise merge request for the same.
-</xmp>  
-        
+      - Working on Frontend Development for first time,not my core skills,trying to improve UI of webpage during every update.If anyone want's to improve GUI for webpages, html pages 
+        are present in git repo. 
+</xmp> 
+
+<p><b>Git Repo: <a href="https://github.com/divyankm/Stock-Exchange-Data-Analysis"> https://github.com/divyankm/Stock-Exchange-Data-Analysis</a></p>
+
 </body>
 </html>
