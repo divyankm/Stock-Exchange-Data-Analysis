@@ -71,17 +71,17 @@
       Still the Trend is same of 15+ years of data and Market's (Indices) tend to move in Cycles.
 </xmp>
 
-<h3 style="text-indent:30px">Another Exit Strategy Based on ATR Based Trailing Stoploss-</h3>
+<!-- <h3 style="text-indent:30px">Another Exit Strategy Based on ATR Based Trailing Stoploss-</h3> -->
 
-<p style="text-indent:30px;font-size:15px">Once Strategy is Initiated/Entered,a trailing stop loss can be set on indices using ATR Trailing Stop Loss indicator in the trading terminal directly.</p>
+<p style="text-indent:30px;font-size:15px" >Once Strategy is Initiated/Entered,a trailing stop loss can be set on indices using ATR Trailing Stop Loss indicator in the trading terminal directly.</p>
 
 <xmp>
     - Entry and Exit's are equally important which will determine the P&L.
     - Exit based on MRR and ATR based Trailing Stop Loss indicator will be different.Will take some time the determine merit's and demerits of both exit strategies.
     - This Strategy is implemented strictly implemented in Cash Markets (on exchange).If transacting in ETF's,it cannot be implemented in Future and Option Market/Segmet(F&O).
-    - This Strategy cannot be implemeted on Intraday Basis, It's Cash and Carry(CNC) based strategy. Also Short Selling is not permitted by exchanges(Heavy penalities/fines 
+    - This Strategy cannot be implemeted on Intraday Basis, It's Cash and Carry(CNC) based strategy. Also Short Tradeing is not permitted by exchanges(Heavy penalities/fines 
       are applicable) on ETF's which comes under cash segment.
-    - Strategy should initiate with buying only, if intiated strategy with selling ETF's will be called Short Selling ,will result in heavy fines.
+    - Strategy should initiate with buying only, if intiated strategy with selling ETF's will be called Short Tradeing, it will cause penalities/fines from Exchanges.
     
     - Strategy should exit with selling same quantity of ETF which are bought during Entering/Buying Strategy.
       Ex- I brought NIFTYBEES(ETF) at ₹ 167/piece having quantity-500 shares, of value=167*500= ₹ 83500 on 17-Jun-2022, when MRR of Nifty-50 is at -1%.
@@ -98,34 +98,110 @@
       **From my side,this strategy currently implemented in dev env and automation(ETL pipeline/Database/VIZ/Dashboard/Alerting Module) is completed.      
 </xmp>
 
-  <p style="text-indent:30px;font-size:15px"></pstyle>ATR-TS (Avg True Range Trailing Stoploss) with Configuration of periods=14 and muliplier=3</p>
-
-  <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/nifty50-atr_ts.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" ></iframe>
 <!-- <iframe src="atr_ts.gif" id="app" width="100%" height="100%" frameborder="0" scrolling="no" ></iframe> -->
 
-<h2>2. ATR Based Trailing Stoploss in USD/INR FUT</h2>
+<h2>2. ATR Based Trailing Stoploss</h2>
+
+<h3 style="text-indent:30px">i) ATR Based Trailing SL in USD/INR FUT:</h3>
 
   <p style="text-indent:30px;font-size:15px"></pstyle>ATR-TS (Avg True Range Trailing Stoploss)on Daily timeframe with Configuration of periods=7 and muliplier=3.</p>
   <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/usd_inr_atr_ts.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" ></iframe>
 
-<p >If any queries do raise PR on this repo for any correction / clarification.Will be happy to help/solve queries.<br>
-    <b>*This Information is just for knowledge purpose,never consider it as investment advice,"No Guaranteed" profit's can be assured in any strategy.</b>
-</p>
+<h3 style="text-indent:30px">ii) ATR Based Trailing SL in NIFTY FUT:</h3>
+  <p style="text-indent:30px;font-size:15px"></pstyle>ATR-TS (Avg True Range Trailing Stoploss) with Configuration of periods=14 and muliplier=3</p>
+  <iframe src="https://divyankm.github.io/Stock-Exchange-Data-Analysis/html%20files/nifty50-atr_ts.html" id="app" width="100%" height="100%" frameborder="0" scrolling="no" ></iframe>
+
+<h4 style="text-indent:30px">BACKTESTING ATR Based Trail. SL in NF FUT:</h4>
+  <p style="text-indent:30px;font-size:15px"></pstyle>Backtesting is one of the most important aspects of developing a trading system. If created and interpreted properly, it can help 
+    traders optimize and improve their strategies, find any technical or theoretical flaws, as well as gain confidence in their strategy before applying it to the real world markets.</p>
+    <xmp>
+      - Below Backtest result are done on ATR Configuration of periods=21 and muliplier=3.
+      - Backtest Result are performed on interval of 1D. We can select shorter interval such as 1 min,3 min,5min,15 min,30 min, 1h, 2h, 3h.
+      - Backtesting result showing P&L based calculation on 1 lot, based of change in number of lots, P&L will in multiple of lots, as Backtesting is performed on Futures.
+      - Backtesting is performed on last 7 years of data, Max period can be 20 years.
+      
+      ** Python Script functionality **
+      - Python Script performing End to End backtesting from Data Extraction,Manipulation,Calculations,Storing Data to Database(ETL Pipeline) for multiple ATR Configuration,
+        interval, period, symbols(current results showing on for 1 symbol which is NF),comparing all stated parameters & generate best possible trading signals(alerts) to
+        end user with high winning probablity trade, end user has nothing to do ,but only act on Trading Signal generated through Algorithm.
+
+        Below are the Basic Sample Backtesting Results are for standalone configuration,interval,period,symbol. 
+        
+        In Future, Backtesting Module will be implemented seperately,currently backtesting is done for only above strategy.
+
+        My 2 Cents: Backtesting gives an fair idea, how certain strategies worked out in past, what can be the max drawdownes,Prob of Profit & Loss,Winning/Lossing Streaks,
+                    P&L ratio are the decisive factor which decides whether to Trade Strategy or not based on results, also user have fair idea Max P&L as well.
+                    During Panic/Sell offs above factors plays pivotal role in not only reducing lossed but also builds conviction rather than depending on random gut feeling
+                    to make decisions.
+                    
+                    Not All Strategies worked in All Kind of Markets, Momemtum Strategies worked in Trending Markets & Non Directional Strategies(Delta Neutral options Strat.)
+                    
+    </xmp>
+
+
+    <p style="text-indent:40px;font-size:15px" ></pstyle><b>Backtest Result forLong Trade: </b></p>
+     
+        <xmp>
+        - Total Profit/Loss from long strategy for NF FUT in ₹ per lot 653400.0
+        - Max Loss in Long Position in Supertrend Strategy for NF FUT per lot in ₹ -30450.0
+        - Max Profit in Long Position in Supertrend Strategy for NF FUT per lot in ₹ 137450.0
+        - Total Trades: 22
+        - Number of Trades in Profit in Long Trade: 15
+        - Number of Trades in Loss in Long Trade: 7
+        - Count of Trade percentage in loss for NF FUT in percent (POL) 32 %
+        - Count of Trade percentage in Profit for NF FUT in percent (POP) 68 %
+        - P&L Ratio for Long Trade Strategy: 2.14
+        - Avg Profit in Long Trade in ₹: 49153
+        - Avg Loss in Long Trade in ₹: -11986
+        </xmp>
+
+        <p style="text-indent:40px;font-size:15px" ></pstyle><b>Backtest Result for Short Trade: </b></p>
+     
+        <xmp>
+        - Total Profit/Loss from short strategy for NF FUT in ₹ per lot 90945.0
+        - Max Loss in short Position in Supertrend Strategy for NF FUT per lot in ₹: -34017.0
+        - Max Profit in short Position in Supertrend Strategy for NF FUT per lot in ₹: 134300.0
+        - Number of Trades in Loss in Short Trade: 13
+        - Number of Trades in Profit in Short Trade: 8
+        - Total Trades in Short Trade Strategy: 21
+        - Count of Trade percentage in Loss for NF FUT in percent (POL) 62 %
+        - Count of Trade percentage in Profit for NF FUT in percent (POP) 38 %
+        - P&L Ratio for Short Trade Strategy: 2.14
+        - Avg Profit in Short Trade is ₹: 39692
+        - Avg Loss in Short Trade is ₹: -17430
+        </xmp>
+
+        <p style="text-indent:40px;font-size:15px" ></pstyle><b>Combined Long and Short Trades: </b></p>
+
+        <table border="1" style="text-indent:40px;font-size:15px"><tr><th>Symbol</th><td>Entry_date</td><td>Entry</td><td>Vix at Entry</td><td>Exit_date</td><td>Exit</td><td>Vix at Exit</td><td>Position</td><td>Difference</td><td>P&L in Rs.</td><td>Days_in_trade</td></tr><tr><th>NF FUT</th><td>2016-02-24  </td><td>7019.0</td><td>24.0</td><td>2016-09-29  </td><td>8591.0</td><td>15.0</td><td>Long Trade</td><td>1573.0</td><td>78650.0</td><td>218.0</td></tr><tr><th>NF FUT</th><td>2016-09-29  </td><td>8591.0</td><td>15.0</td><td>2017-01-05  </td><td>8274.0</td><td>15.0</td><td>Short Trade</td><td>317.0</td><td>15873.0</td><td>98.0</td></tr><tr><th>NF FUT</th><td>2017-01-05  </td><td>8274.0</td><td>15.0</td><td>2017-08-10  </td><td>9820.0</td><td>12.0</td><td>Long Trade</td><td>1546.0</td><td>77300.0</td><td>217.0</td></tr><tr><th>NF FUT</th><td>2017-08-10  </td><td>9820.0</td><td>12.0</td><td>2017-09-01  </td><td>9974.0</td><td>14.0</td><td>Short Trade</td><td>-154.0</td><td>-7708.0</td><td>22.0</td></tr><tr><th>NF FUT</th><td>2017-09-01  </td><td>9974.0</td><td>14.0</td><td>2017-09-25  </td><td>9873.0</td><td>11.0</td><td>Long Trade</td><td>-102.0</td><td>-5100.0</td><td>24.0</td></tr><tr><th>NF FUT</th><td>2017-09-25  </td><td>9873.0</td><td>11.0</td><td>2017-10-10  </td><td>10017.0</td><td>13.0</td><td>Short Trade</td><td>-144.0</td><td>-7218.0</td><td>15.0</td></tr><tr><th>NF FUT</th><td>2017-10-10  </td><td>10017.0</td><td>13.0</td><td>2017-11-14  </td><td>10187.0</td><td>12.0</td><td>Long Trade</td><td>170.0</td><td>8500.0</td><td>35.0</td></tr><tr><th>NF FUT</th><td>2017-11-14  </td><td>10187.0</td><td>12.0</td><td>2017-11-27  </td><td>10400.0</td><td>13.0</td><td>Short Trade</td><td>-213.0</td><td>-10648.0</td><td>13.0</td></tr><tr><th>NF FUT</th><td>2017-11-27  </td><td>10400.0</td><td>13.0</td><td>2017-12-01  </td><td>10122.0</td><td>14.0</td><td>Long Trade</td><td>-278.0</td><td>-13900.0</td><td>4.0</td></tr><tr><th>NF FUT</th><td>2017-12-01  </td><td>10122.0</td><td>14.0</td><td>2017-12-15  </td><td>10333.0</td><td>15.0</td><td>Short Trade</td><td>-211.0</td><td>-10573.0</td><td>14.0</td></tr><tr><th>NF FUT</th><td>2017-12-15  </td><td>10333.0</td><td>15.0</td><td>2018-02-02  </td><td>10761.0</td><td>14.0</td><td>Long Trade</td><td>427.0</td><td>21350.0</td><td>49.0</td></tr><tr><th>NF FUT</th><td>2018-02-02  </td><td>10761.0</td><td>14.0</td><td>2018-04-09  </td><td>10379.0</td><td>16.0</td><td>Short Trade</td><td>381.0</td><td>19062.0</td><td>66.0</td></tr><tr><th>NF FUT</th><td>2018-04-09  </td><td>10379.0</td><td>16.0</td><td>2018-05-21  </td><td>10517.0</td><td>14.0</td><td>Long Trade</td><td>137.0</td><td>6850.0</td><td>42.0</td></tr><tr><th>NF FUT</th><td>2018-05-21  </td><td>10517.0</td><td>14.0</td><td>2018-06-07  </td><td>10768.0</td><td>13.0</td><td>Short Trade</td><td>-252.0</td><td>-12582.0</td><td>17.0</td></tr><tr><th>NF FUT</th><td>2018-06-07  </td><td>10768.0</td><td>13.0</td><td>2018-09-05  </td><td>11477.0</td><td>13.0</td><td>Long Trade</td><td>709.0</td><td>35450.0</td><td>90.0</td></tr><tr><th>NF FUT</th><td>2018-09-05  </td><td>11477.0</td><td>13.0</td><td>2018-11-07  </td><td>10598.0</td><td>19.0</td><td>Short Trade</td><td>879.0</td><td>43927.0</td><td>63.0</td></tr><tr><th>NF FUT</th><td>2018-11-07  </td><td>10598.0</td><td>19.0</td><td>2019-02-18  </td><td>10641.0</td><td>18.0</td><td>Long Trade</td><td>43.0</td><td>2150.0</td><td>103.0</td></tr><tr><th>NF FUT</th><td>2019-02-18  </td><td>10641.0</td><td>18.0</td><td>2019-03-06  </td><td>11053.0</td><td>16.0</td><td>Short Trade</td><td>-412.0</td><td>-20602.0</td><td>16.0</td></tr><tr><th>NF FUT</th><td>2019-03-06  </td><td>11053.0</td><td>16.0</td><td>2019-05-08  </td><td>11359.0</td><td>21.0</td><td>Long Trade</td><td>306.0</td><td>15300.0</td><td>63.0</td></tr><tr><th>NF FUT</th><td>2019-05-08  </td><td>11359.0</td><td>21.0</td><td>2019-05-20  </td><td>11828.0</td><td>23.0</td><td>Short Trade</td><td>-469.0</td><td>-23440.0</td><td>12.0</td></tr><tr><th>NF FUT</th><td>2019-05-20  </td><td>11828.0</td><td>23.0</td><td>2019-07-08  </td><td>11559.0</td><td>14.0</td><td>Long Trade</td><td>-270.0</td><td>-13500.0</td><td>49.0</td></tr><tr><th>NF FUT</th><td>2019-07-08  </td><td>11559.0</td><td>14.0</td><td>2019-09-20  </td><td>11274.0</td><td>16.0</td><td>Short Trade</td><td>284.0</td><td>14220.0</td><td>74.0</td></tr><tr><th>NF FUT</th><td>2019-09-20  </td><td>11274.0</td><td>16.0</td><td>2020-01-31  </td><td>11962.0</td><td>15.0</td><td>Long Trade</td><td>688.0</td><td>34400.0</td><td>133.0</td></tr><tr><th>NF FUT</th><td>2020-01-31  </td><td>11962.0</td><td>15.0</td><td>2020-02-05  </td><td>12089.0</td><td>14.0</td><td>Short Trade</td><td>-127.0</td><td>-6353.0</td><td>5.0</td></tr><tr><th>NF FUT</th><td>2020-02-05  </td><td>12089.0</td><td>14.0</td><td>2020-02-25  </td><td>11798.0</td><td>16.0</td><td>Long Trade</td><td>-291.0</td><td>-14550.0</td><td>20.0</td></tr><tr><th>NF FUT</th><td>2020-02-25  </td><td>11798.0</td><td>16.0</td><td>2020-04-09  </td><td>9112.0</td><td>31.0</td><td>Short Trade</td><td>2686.0</td><td>134300.0</td><td>44.0</td></tr><tr><th>NF FUT</th><td>2020-04-09  </td><td>9112.0</td><td>31.0</td><td>2020-09-22  </td><td>11154.0</td><td>19.0</td><td>Long Trade</td><td>2042.0</td><td>102100.0</td><td>166.0</td></tr><tr><th>NF FUT</th><td>2020-09-22  </td><td>11154.0</td><td>19.0</td><td>2020-10-01  </td><td>11417.0</td><td>21.0</td><td>Short Trade</td><td>-263.0</td><td>-13165.0</td><td>9.0</td></tr><tr><th>NF FUT</th><td>2020-10-01  </td><td>11417.0</td><td>21.0</td><td>2021-01-27  </td><td>13968.0</td><td>20.0</td><td>Long Trade</td><td>2551.0</td><td>127550.0</td><td>118.0</td></tr><tr><th>NF FUT</th><td>2021-01-27  </td><td>13968.0</td><td>20.0</td><td>2021-02-02  </td><td>14648.0</td><td>21.0</td><td>Short Trade</td><td>-680.0</td><td>-34017.0</td><td>6.0</td></tr><tr><th>NF FUT</th><td>2021-02-02  </td><td>14648.0</td><td>21.0</td><td>2021-02-26  </td><td>14529.0</td><td>23.0</td><td>Long Trade</td><td>-119.0</td><td>-5950.0</td><td>24.0</td></tr><tr><th>NF FUT</th><td>2021-02-26  </td><td>14529.0</td><td>23.0</td><td>2021-05-18  </td><td>15108.0</td><td>20.0</td><td>Short Trade</td><td>-579.0</td><td>-28947.0</td><td>81.0</td></tr><tr><th>NF FUT</th><td>2021-05-18  </td><td>15108.0</td><td>20.0</td><td>2021-10-28  </td><td>17857.0</td><td>16.0</td><td>Long Trade</td><td>2749.0</td><td>137450.0</td><td>163.0</td></tr><tr><th>NF FUT</th><td>2021-10-28  </td><td>17857.0</td><td>16.0</td><td>2022-01-03  </td><td>17626.0</td><td>21.0</td><td>Short Trade</td><td>232.0</td><td>11578.0</td><td>67.0</td></tr><tr><th>NF FUT</th><td>2022-01-03  </td><td>17626.0</td><td>21.0</td><td>2022-01-21  </td><td>17617.0</td><td>16.0</td><td>Long Trade</td><td>-9.0</td><td>-450.0</td><td>18.0</td></tr><tr><th>NF FUT</th><td>2022-01-21  </td><td>17617.0</td><td>16.0</td><td>2022-03-14  </td><td>16871.0</td><td>19.0</td><td>Short Trade</td><td>746.0</td><td>37292.0</td><td>52.0</td></tr><tr><th>NF FUT</th><td>2022-03-14  </td><td>16871.0</td><td>19.0</td><td>2022-04-19  </td><td>16959.0</td><td>27.0</td><td>Long Trade</td><td>87.0</td><td>4350.0</td><td>36.0</td></tr><tr><th>NF FUT</th><td>2022-04-19  </td><td>16959.0</td><td>27.0</td><td>2022-07-07  </td><td>16133.0</td><td>20.0</td><td>Short Trade</td><td>826.0</td><td>41288.0</td><td>79.0</td></tr><tr><th>NF FUT</th><td>2022-07-07  </td><td>16133.0</td><td>20.0</td><td>2022-08-29  </td><td>17313.0</td><td>17.0</td><td>Long Trade</td><td>1180.0</td><td>59000.0</td><td>53.0</td></tr><tr><th>NF FUT</th><td>2022-08-29  </td><td>17313.0</td><td>17.0</td><td>2022-09-12  </td><td>17936.0</td><td>17.0</td><td>Short Trade</td><td>-623.0</td><td>-31172.0</td><td>14.0</td></tr><tr><th>NF FUT</th><td>2022-09-12  </td><td>17936.0</td><td>17.0</td><td>2022-09-23  </td><td>17327.0</td><td>18.0</td><td>Long Trade</td><td>-609.0</td><td>-30450.0</td><td>11.0</td></tr><tr><th>NF FUT</th><td>2022-09-23  </td><td>17327.0</td><td>18.0</td><td>2022-10-24  </td><td>17731.0</td><td>17.0</td><td>Short Trade</td><td>-403.0</td><td>-20170.0</td><td>31.0</td></tr><tr><th>NF FUT</th><td>2022-10-24  </td><td>17731.0</td><td>17.0</td><td>2022-12-16  </td><td>18269.0</td><td>16.0</td><td>Long Trade</td><td>538.0</td><td>26900.0</td><td>53.0</td></tr><tr><th>NF FUT</th><td>2022-12-16  </td><td>18269.0</td><td>16.0</td><td>Ongoing</td><td>Ongoing</td><td>Ongoing</td><td>Short Trade</td><td>Ongoing</td><td>Ongoing</td><td>Ongoing</td></tr></table>
+        
+        <p style="text-indent:40px;font-size:15px" ></pstyle><b>Combined Backtesting Paramaeters for ATR TS Strategy on NF FUT: </b></p>
+        
+        <xmp>
+        - Overall Winning Streak 4
+        - Overall Losing Streak : 3
+        - Max Profit Overall in Supertrend Strategy for ^NSEI per lot in ₹ 137450.0
+        - Max Loss Overall in Supertrend Strategy for ^NSEI per lot in ₹ -34017.0
+        - Total Overall P&L in Supertrend Strategy for ^NSEI per lot in ₹ 744345.0
+        - Overall Losing Streak Loss in Supertrend Strategy for ^NSEI FUT per lot in ₹ -20026.0
+        - Overall Winning Streak Profit in Supertrend Strategy for ^NSEI FUT per lot in ₹ 141930.0
+        - Total Trades: 43
+        - Count of Trades having Loss: 20
+        - Count of Trades having Profit: 23
+        - SuperTrend Strategy P&L ratio 1.15
+        - Count of Trade percentage in Loss for ^NSEI in percent (POL) 47 %
+        - Count of Trade percentage in Profit for ^NSEI in percent (POP) 53 %
+        </xmp>
+
+<p>If any queries do raise PR on this repo for any correction / clarification.Will be happy to help/solve queries.<br>
+    <b>*This Information is just for knowledge purpose,never consider it as investment advice,"No Guaranteed" profit's can be assured in any strategy.</b></p>
 
 <p><b>Glossary</b></p>
 
 <p> 
+  <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 12px;margin: -8px -8px; color:white;display: inline-block" href="https://corporatefinanceinstitute.com/resources/data-science/backtesting/" title="">BackTesting</a></button>
   <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 12px;margin: -8px -8px; color:white;display: inline-block" href="https://zerodha.com/varsity/chapter/exchange-traded-funds-etf/" title="">ETF's</a></button>
   <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 12px;margin: -8px -8px; color:white;display: inline-block" href="https://www.thebalance.com/long-and-short-trading-term-definitions-1031122" title="">long vs short trades</a></button>
   <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 12px;margin: -8px -8px; color:white;display: inline-block" href="https://groww.in/p/trailing-stop-loss" title="">trailing-stop-loss</a></button>
   <button><a target="blank" style="background-color:green; border:none; font-size: 15px; padding: 12px 12px;margin: -8px -8px; color:white;display: inline-block" href="https://zerodha.com/varsity/chapter/the-usd-inr-pair/" title="">USD/INR FUT</a></button>
 </p>
-
-
-
-
-
-
-
-
-
